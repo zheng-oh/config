@@ -1,0 +1,89 @@
+set nocompatible
+filetype off
+" 安装插件
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"set shell=/bin/bash
+" 自定义代码补全
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'SirVer/ultisnips'
+"Bundle 'davidhalter/jedi-vim'
+" superTab
+Plugin 'ervandew/supertab'
+call vundle#end()  
+filetype plugin indent on
+set  nu
+set  relativenumber
+set incsearch
+syntax on
+syntax enable
+set encoding=utf-8
+set fileencoding=utf-8
+set autoindent
+set pastetoggle=<F2>
+set ts=4
+set sw=4
+" 主题 molikai 
+let g:molokai_original = 0
+set t_Co=256
+colorscheme molokai
+" 括号匹配高亮
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+" 括号匹配
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap { {}<ESC>i
+inoremap } <c-r>=ClosePair('}')<CR>
+inoremap [ []<ESC>i
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap < <><ESC>i
+inoremap > <c-r>=ClosePair('>')<CR>
+function ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endf
+let g:rbpt_max=40
+let g:rbpt_loadcmd_toggle=0
+" 可视化缩进
+let g:indent_guides_enable_on_vim_startup=0 "默认关闭
+let g:indent_guides_guide_size=1            "指定对齐线的尺寸
+let g:indent_guides_start_level=2           "从第二层开始可视化显示缩进
+" Ultisnips配置
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" 运行文件
+map <F5> :call CompileRunGcc()<CR>
+    func! CompileRunGcc()
+        exec "w"
+if &filetype == 'python'
+        exec "!time python %"
+endif
+    endfunc
+
+
+"操作步骤
+"1. git clone https://github.com/VundleVim/Vundle.vim ~./vim/bundle/Vundle.vim
+"2. vim   :PluginInstall

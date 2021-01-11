@@ -1,0 +1,41 @@
+# This snippet file enables vue files to use tabs for html, js and css. It also
+# includes some vue-specific html-like snippets, as well as some general
+# boilerplate code for vue.
+
+# These snippets form a port of Sarah Drasner's vue-sublime-snippets
+# some html-like snippets
+
+
+snippet axp "axios post"
+axios({
+	method: 'post',
+	url: '${1:/}',
+	data: {
+		${2:name}: ${3:'zheng'},
+		${4:}
+	}
+})
+.then(function (response){
+	console(response);
+});
+.catch(function (error){
+	console(error);
+});
+endsnippet
+
+snippet axg "axios get"
+axios({
+	method: 'get',
+	url: '${1:/}',
+	data: {
+		${2:name}: ${3:'zheng'},
+		${4:}
+	}
+})
+.then(function (response){
+	console(response);
+});
+.catch(function (error){
+	console(error);
+});
+endsnippet
