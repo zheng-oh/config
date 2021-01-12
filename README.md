@@ -62,7 +62,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     ln -s /usr/bin/vim /usr/bin/vi
     visudo   (%wheel ALL=(ALL) NOPASSWD:ALL ，取消注释)
     reboot
-## 14. archlinux
+## 14. archlinuxcn及镜像列表
 https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
 
     [archlinuxcn]
