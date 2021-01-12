@@ -104,4 +104,27 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
     vim .git-credentials
     https://{username}:{password}@github.com
     git config --global credential.helper store
+## 21. docker 配置
+#### 配置免sudo 使用docker
+	sudo groupadd docker
+#### 将用户加入该 group 内。然后退出并重新登录就生效啦。
+	sudo gpasswd -a ${USER} docker
+#### 重启 docker 服务
+	sudo service docker restart
+#### 切换当前会话到新 group 或者重启 X 会话
+	newgrp - docker
+#### redis
+	docker run -d  --name redis -p 6379:6379 --privileged=true --restart always redis:latest
+#### mysql
+	docker run -d --name mysql -p 3306:3306 --privileged=true --restart always -e MYSQL_ROOT_PASSWORD=123456 -e TZ=Asia/Shanghai -v /var/lib/mysql:/var/lib/mysql mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 
+#### mongo
+	docker run -d -p 27017:27017 -v /var/lib/mongo:/data/db --name mongo mongo --auth
+	use admin
+	db.createUser(
+	   {
+		 user: "root",
+		 pwd: "123456",
+		 roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+	   }
+	 )
 
