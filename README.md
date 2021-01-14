@@ -92,7 +92,8 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
     makepkg -si
 ## 19. 字体
 #### 代码字体
-    sudo pacman -S adobe-source-code-pro-fonts nerd-fonts-source-code-pro
+    sudo pacman -S adobe-source-code-pro-fonts 
+	yay -S nerd-fonts-source-code-pro
 #### emjo
     ttf-stmbola
 #### 中文
