@@ -55,7 +55,7 @@ fcitx5 &
 numlockx &
 
 picom -CGb &   
-while habak -ms -hi ~/Picture/   #让habak从你的壁纸目录中随机选择一张屏幕壁纸显示
+while feh --bg-fill --randomize ~/Picture  #让feh从你的壁纸目录中随机选择一张屏幕壁纸显示
 do
 	sleep 600   #让habak每隔10分钟随机切换一张屏幕壁纸
 done &

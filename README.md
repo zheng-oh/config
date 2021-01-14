@@ -81,7 +81,7 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
 ## 16. 安装必须的软件
     wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
     bash Mini....
-    pacman -S base-devel xorg xorg-server xorg-xinit picom habak neofetch htop chromium ranger dmenu numlockx(可选)
+    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger dmenu numlockx(可选)
     chsh -s /usr/bin/fish
 ## 17. 安装窗口管理、终端
     git clone dwm、st
