@@ -101,11 +101,18 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
 ## 20. 中文输入法
     sudo pacman -Rsc fcitx
     sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk kcm-fcitx5 fcitx5-material-color
-## 20. git push免密
+## 21. git push免密
     vim .git-credentials
     https://{username}:{password}@github.com
     git config --global credential.helper store
-## 21. docker 配置
+## 22. u盘自动加载到media
+#### 安装启动
+	sudo pacman -S udevil zenity
+	sudo systemctl start devmon@zxing
+	sudo systemctl enable devmon@zxing
+#### 同步u盘数据 并推出
+	devmen -r
+## 23. docker 配置
 #### 配置免sudo 使用docker
 	sudo groupadd docker
 #### 将用户加入该 group 内。然后退出并重新登录就生效啦。
