@@ -107,7 +107,7 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
     git config --global credential.helper store
 ## 22. u盘自动加载到media
 #### 安装启动
-	sudo pacman -S udevil zenity
+	sudo pacman -S udevil zenity exfat-utils(支持wxfat,否则只支持fat32)
 	sudo systemctl start devmon@zxing
 	sudo systemctl enable devmon@zxing
 #### 同步u盘数据 并推出
