@@ -6,6 +6,6 @@ function fish_title
  if test $TERM_PROGRAM
   echo $TERM_PROGRAM
  else
-  echo $TERM|egrep -o "\w*"
+  echo $TERM|egrep -o "^\w*"
  end
 end
