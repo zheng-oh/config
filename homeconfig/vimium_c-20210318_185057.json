@@ -1,0 +1,42 @@
+{
+	"name": "Vimium C",
+	"@time": "2021/3/18下午6:50:57",
+	"time": 1616064657749,
+	"environment": {
+		"extension": "1.88.2",
+		"platform": "win",
+		"chrome": 88
+	},
+	"searchEngines": [
+		"a|ar|al: https://wiki.archlinux.org/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) archlinux",
+		"b|ba|bd|baidu|Baidu|百度: https://www.baidu.com/",
+		"dw|dwm: https://dwm.suckless.org/",
+		"tm|tsm|tsing|tune:https://mirrors.tuna.tsinghua.edu.cn/",
+		"s|st: https://st.suckless.org/",
+		"git: https://github.com/zheng-oh",
+		"gp|gitp:https://github.com/zheng-oh/papers",
+		"gc|gcon|gconfig:https://github.com/zheng-oh/.config",
+		"gl:https://github.com/zheng-oh/linux_config",
+		"gd: https://github.com/zheng-oh/dwm",
+		"gs:https://github.com/zheng-oh/st",
+		"gpt|gpa:https://github.com/zheng-oh/patent",
+		"ge|gite|gee: https://gitee.com/zheng-oh",
+		"gep|gitep:https://gitee.com/zheng-oh/papers",
+		"gec|gecon|geconfig:https://gitee.com/zheng-oh/config",
+		"gel:https://gitee.com/zheng-oh/linux_config",
+		"ged: https://gitee.com/zheng-oh/dwm",
+		"ges:https://gitee.com/zheng-oh/st",
+		"gept|gepa:https://gitee.com/zheng-oh/patent",
+		"yd: http://fanyi.youdao.com/",
+		"c|cn :https://www.cnki.net/",
+		"cf: https://dict.cnki.net/index",
+		"bl|bi|bli:https://www.bilibili.com/",
+		"sc|scr :https://scrapyer.com/file/",
+		"skl|sk|sl|kl:https://www.scikitlearn.com.cn/",
+		"qq|qe :https://mail.qq.com/",
+		"yi|yit|yt|ying|tong:http://yjsjy.hzau.edu.cn/Sysgraduate.aspx",
+		"arj|jua|ja|aj:https://scrapyer.com:6888/tree?",
+		"jt|tj|jut|tju:http://scrapyer.com:8888/tree/documents",
+		""
+	]
+}
