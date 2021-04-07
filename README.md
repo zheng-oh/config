@@ -128,11 +128,5 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
 #### mongo
 	docker run -d -p 27017:27017 -v /var/lib/mongo:/data/db --name mongo mongo --auth
 	use admin
-	db.createUser(
-	   {
-		 user: "root",
-		 pwd: "123456",
-		 roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
-	   }
-	 )
-
+	db.createUser({user:"xxx",pwd:"xxxx",roles:["root"]})
+	db.createUser({user:"aw","pwd":"123456",roles:[{role:"readWrite",db:"xx"}]})
