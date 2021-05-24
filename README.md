@@ -27,14 +27,14 @@ https://wiki.archlinux.org/index.php/Installation_guide
     mount /dev/sda1 /mnt/boot
 ## 7. 安装
     mirrorlist 顺序修改
-    cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
     pacstrap /mnt base linux linux-firmware vim
 ## 8. 配置系统
     genfstab -U /mnt >> /mnt/etc/fstab
     cat /mnt/etc/fstab
+    cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 ## 9. 进入系统-设置时区
     arch-chroot /mnt
-    ln -sf /user/share/zoneinfo/Asia/Shanghai /etc/localtim
+    ln -sf /user/share/zoneinfo/Asia/Shanghai /etc/localtime
     hwclock --systohc
     vim /etc/locale.gen (en_US.UTF-8,en_GB.UTF-8)
     locale-gen
