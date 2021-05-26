@@ -53,18 +53,24 @@ https://wiki.archlinux.org/index.php/Installation_guide
     grub-mkconfig > /boot/grub/grub.cfg
     uname -m
     grub-install --targrt=x86_64-efi --efi-directory=/boot
-## 12. 安装联网软件
-    pacman -S fish wpa_supplicant dhcpcd wget git
-    systemctl enable dhcpcd (仅虚拟机, 否则参考2)
-## 13. 新建用户
+## 12. 安装必须的软件
+    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avihi numlockx(可选)
+    wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
+    bash Mini....
+    chsh -s /usr/bin/fish
+## 13. 启动服务
+    systemctl enable dhcpcd (虚拟机参考2)
+	sed -i "s/hosts.*/hosts: files mdns4-minimal [NOTFOUND=return] dns mdns4/g" /etc/nsswitch.conf
+    systemctl enable avihi-daemon
+    systemctl enable sshd
+## 14. 新建用户
     useradd -m -G wheel zxing
     passwd zxing
     ln -s /usr/bin/vim /usr/bin/vi
     visudo   (%wheel ALL=(ALL) NOPASSWD:ALL ，取消注释)
     reboot
-## 14. archlinuxcn及镜像列表
+## 15. archlinuxcn及镜像列表
 https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
-
     [archlinuxcn]
     Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
     sudo pacman -S archlinuxcn-keyring reflector
@@ -73,23 +79,16 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
     sudo pacman -Syy
     sudo pacman -S -force pacman-mirrorlist
     <!-- sudo pacman-key --refresh-keys -->
-## 15. 驱动安装
+## 16. 驱动安装
     lspci | grep -e VGA -e 3D 查看显卡驱动
     pacman -Ss xf86-video 查看对应的显示驱动程序
     pacman -S xf86-video-vmware alsa-utils (安装虚拟机的显示驱动、声卡驱动)
     配置xorg.conf 显示器分辨率 (from git clone linux_config)
-## 16. 安装必须的软件
-    wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
-    bash Mini....
-    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger dmenu numlockx(可选)
-    chsh -s /usr/bin/fish
 ## 17. 安装窗口管理、终端
     git clone dwm、st
     sudo make clean install
 ## 18. 安装yay
     git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
 ## 19. 字体
 #### 代码字体
     sudo pacman -S adobe-source-code-pro-fonts 
