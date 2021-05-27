@@ -61,7 +61,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
 ## 13. 启动服务
     systemctl enable dhcpcd (虚拟机参考2)
 	sed -i "s/hosts.*/hosts: files mdns4-minimal [NOTFOUND=return] dns mdns4/g" /etc/nsswitch.conf
-    systemctl enable avihi-daemon
+    systemctl enable avahi-daemon
     systemctl enable sshd
 ## 14. 新建用户
     useradd -m -G wheel zxing
