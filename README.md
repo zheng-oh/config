@@ -34,7 +34,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 ## 9. 进入系统-设置时区
     arch-chroot /mnt
-    ln -sf /user/share/zoneinfo/Asia/Shanghai /etc/localtime
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
     hwclock --systohc
     vim /etc/locale.gen (en_US.UTF-8,en_GB.UTF-8)
     locale-gen
@@ -54,7 +54,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     uname -m
     grub-install --targrt=x86_64-efi --efi-directory=/boot
 ## 12. 安装必须的软件
-    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avihi numlockx(可选)
+    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avahi numlockx(可选)
     wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
     bash Mini....
     chsh -s /usr/bin/fish
