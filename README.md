@@ -70,7 +70,6 @@ https://wiki.archlinux.org/index.php/Installation_guide
     visudo   (%wheel ALL=(ALL) NOPASSWD:ALL ，取消注释)
     reboot
 ## 15. archlinuxcn及镜像列表
-https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
     [archlinuxcn]
     Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
     sudo pacman -S archlinuxcn-keyring reflector
@@ -88,6 +87,7 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
     git clone dwm、st
     sudo make clean install
 ## 18. 安装yay
+    pacman -S yay
     git clone https://aur.archlinux.org/yay.git
 ## 19. 字体
 #### 代码字体
