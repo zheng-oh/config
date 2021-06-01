@@ -93,8 +93,9 @@ https://wiki.archlinux.org/index.php/Installation_guide
 #### 代码字体
     sudo pacman -S adobe-source-code-pro-fonts 
 	yay -S nerd-fonts-source-code-pro
-#### emjo
-    ttf-stmbola
+#### emoji
+    ttf-symbola
+    emoji查询 https://apps.timwhitlock.info/emoji/tables/unicode
 #### 中文
     yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
 ## 20. 中文输入法
