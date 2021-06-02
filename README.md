@@ -52,9 +52,9 @@ https://wiki.archlinux.org/index.php/Installation_guide
     mkdir /boot/grub
     grub-mkconfig > /boot/grub/grub.cfg
     uname -m
-    grub-install --targrt=x86_64-efi --efi-directory=/boot
+    grub-install --target=x86_64-efi --efi-directory=/boot
 ## 12. 安装必须的软件
-    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avahi numlockx(可选)
+    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avahi nss-mdns numlockx(可选)
     wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
     bash Mini....
     chsh -s /usr/bin/fish
