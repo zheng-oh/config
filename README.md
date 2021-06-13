@@ -48,8 +48,10 @@ https://wiki.archlinux.org/index.php/Installation_guide
         127.0.1.1	myhostname.localdomain	myhostname
     passwd   ######很重要
 ## 11. 安装引导
-    pacman -S grub efibootmgr intel-ucode/amd-ucode os-prober(可选，)
+    pacman -S grub efibootmgr intel-ucode/amd-ucode os-prober(可选，) grub-theme-vimix-color-2k-git(可选，主题)
     mkdir /boot/grub
+	sudo pacman -Ql grub-theme-vimix-color-2k-git(可选)
+	cp "theme.txt" 路径到 /etc/default/grub 下"GRUB_THEME"(可选)
     grub-mkconfig > /boot/grub/grub.cfg
     uname -m
     grub-install --target=x86_64-efi --efi-directory=/boot
@@ -73,11 +75,9 @@ https://wiki.archlinux.org/index.php/Installation_guide
     [archlinuxcn]
     Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
     sudo pacman -S archlinuxcn-keyring reflector
-    pacman -Sy archlinuxcn-keyring && pacman -Su
     sudo reflector --verbose --latest 20 --country China --sort rate --save /etc/pacman.d/mirrorlist
     sudo pacman -Syy
-    sudo pacman -S -force pacman-mirrorlist
-    <!-- sudo pacman-key --refresh-keys -->
+    sudo pacman-key --refresh-keys
 ## 16. 驱动安装
     lspci | grep -e VGA -e 3D 查看显卡驱动
     pacman -Ss xf86-video 查看对应的显示驱动程序
@@ -97,7 +97,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     ttf-symbola
     emoji查询 https://apps.timwhitlock.info/emoji/tables/unicode
 #### 中文
-    yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+    yay -S adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
 ## 20. 中文输入法
     sudo pacman -Rsc fcitx
     sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk kcm-fcitx5 fcitx5-material-color
