@@ -9,3 +9,6 @@ function fish_title
   echo $TERM|egrep -o "^\w*"
  end
 end
+if status --is-login
+	startx
+end
