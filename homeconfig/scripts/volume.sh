@@ -1,7 +1,6 @@
 #!/bin/bash
 l_volume=`amixer get Master | awk '/Limits/{ print $NF }'`
 c_volume=`amixer get Master | awk -F'[ []' 'END { print $5 }'`
-echo $c_volume	
 
 rate=10 #音量变化的百分比
 
