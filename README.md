@@ -27,14 +27,14 @@ https://wiki.archlinux.org/index.php/Installation_guide
     mount /dev/sda1 /mnt/boot
 ## 7. 安装
     mirrorlist 顺序修改
-    cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
     pacstrap /mnt base linux linux-firmware vim
 ## 8. 配置系统
     genfstab -U /mnt >> /mnt/etc/fstab
     cat /mnt/etc/fstab
+    cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 ## 9. 进入系统-设置时区
     arch-chroot /mnt
-    ln -sf /user/share/zoneinfo/Asia/Shanghai /etc/localtim
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
     hwclock --systohc
     vim /etc/locale.gen (en_US.UTF-8,en_GB.UTF-8)
     locale-gen
@@ -48,56 +48,56 @@ https://wiki.archlinux.org/index.php/Installation_guide
         127.0.1.1	myhostname.localdomain	myhostname
     passwd   ######很重要
 ## 11. 安装引导
-    pacman -S grub efibootmgr intel-ucode/amd-ucode os-prober(可选，)
+    pacman -S grub efibootmgr intel-ucode/amd-ucode os-prober(可选，) grub-theme-vimix-color-2k-git(可选，主题)
     mkdir /boot/grub
+	sudo pacman -Ql grub-theme-vimix-color-2k-git(可选)
+	cp "theme.txt" 路径到 /etc/default/grub 下"GRUB_THEME"(可选)
     grub-mkconfig > /boot/grub/grub.cfg
     uname -m
-    grub-install --targrt=x86_64-efi --efi-directory=/boot
-## 12. 安装联网软件
-    pacman -S fish wpa_supplicant dhcpcd wget git
-    systemctl enable dhcpcd (仅虚拟机, 否则参考2)
-## 13. 新建用户
+    grub-install --target=x86_64-efi --efi-directory=/boot
+## 12. 安装必须的软件
+    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avahi nss-mdns numlockx(可选)
+    wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
+    bash Mini....
+    chsh -s /usr/bin/fish
+## 13. 启动服务
+    systemctl enable dhcpcd (虚拟机参考2)
+	sed -i "s/hosts.*/hosts: files mdns4-minimal [NOTFOUND=return] dns mdns4/g" /etc/nsswitch.conf
+    systemctl enable avahi-daemon
+    systemctl enable sshd
+## 14. 新建用户
     useradd -m -G wheel zxing
     passwd zxing
     ln -s /usr/bin/vim /usr/bin/vi
     visudo   (%wheel ALL=(ALL) NOPASSWD:ALL ，取消注释)
     reboot
-## 14. archlinuxcn及镜像列表
-https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
-
+## 15. archlinuxcn及镜像列表
     [archlinuxcn]
     Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
     sudo pacman -S archlinuxcn-keyring reflector
-    pacman -Sy archlinuxcn-keyring && pacman -Su
     sudo reflector --verbose --latest 20 --country China --sort rate --save /etc/pacman.d/mirrorlist
     sudo pacman -Syy
-    sudo pacman -S -force pacman-mirrorlist
-    <!-- sudo pacman-key --refresh-keys -->
-## 15. 驱动安装
+    sudo pacman-key --refresh-keys
+## 16. 驱动安装
     lspci | grep -e VGA -e 3D 查看显卡驱动
     pacman -Ss xf86-video 查看对应的显示驱动程序
     pacman -S xf86-video-vmware alsa-utils (安装虚拟机的显示驱动、声卡驱动)
     配置xorg.conf 显示器分辨率 (from git clone linux_config)
-## 16. 安装必须的软件
-    wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
-    bash Mini....
-    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger dmenu numlockx(可选)
-    chsh -s /usr/bin/fish
 ## 17. 安装窗口管理、终端
     git clone dwm、st
     sudo make clean install
 ## 18. 安装yay
+    pacman -S yay
     git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
 ## 19. 字体
 #### 代码字体
     sudo pacman -S adobe-source-code-pro-fonts 
 	yay -S nerd-fonts-source-code-pro
-#### emjo
-    ttf-stmbola
+#### emoji
+    ttf-symbola
+    emoji查询 https://apps.timwhitlock.info/emoji/tables/unicode
 #### 中文
-    yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+    yay -S adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
 ## 20. 中文输入法
     sudo pacman -Rsc fcitx
     sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk kcm-fcitx5 fcitx5-material-color
@@ -105,6 +105,8 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
     vim .git-credentials
     https://{username}:{password}@github.com
     git config --global credential.helper store
+	git config --global user.name "zheng-oh"
+	git config --global user.email "894389673@qq.com"
 ## 22. u盘自动加载到media
 #### 安装启动
 	sudo pacman -S udevil zenity exfat-utils(支持wxfat,否则只支持fat32)

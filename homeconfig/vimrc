@@ -85,5 +85,5 @@ endif
 
 
 "操作步骤
-"1. git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
+"1. git clone https://gitee.com/zheng-oh/Vundle.vim ~/.vim/bundle/Vundle.vim
 "2. vim   :PluginInstall

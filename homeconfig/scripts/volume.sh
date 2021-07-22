@@ -1,6 +1,7 @@
 #!/bin/bash
 l_volume=`amixer get Master | awk '/Limits/{ print $NF }'`
-c_volume=`amixer get Master | awk -F'[ []' 'END { print $6 }'`
+c_volume=`amixer get Master | awk -F'[ []' 'END { print $5 }'` #win
+#c_volume=`amixer get Master | awk -F'[ []' 'END { print $6 }'` #mac
 
 rate=10 #音量变化的百分比
 
@@ -12,7 +13,7 @@ function ajvolume(){
 		let c_volume=$l_volume
 	fi
 	amixer sset Master $c_volume
-	xsetroot -name "IP:$(ip addr show ens33| awk '/ens33/{print $2}'|tail -1)|Volume:$(amixer get Master | awk -F'[][]' 'END { print $2 }')|$(LC_ALL='C' date +'%F[%b %a] %R')"
+	xsetroot -name "IP:$(ip addr show $IPADDR| awk '/inet\s/ {print $2}')|Volume:$(amixer get Master | awk -F'[][]' 'END { print $2 }')|$(LC_ALL='C' date +'%F[%b %a] %R')"
 }
 if [ $1 = "+" ];then
 	if [ $c_volume != $l_volume ]; then
