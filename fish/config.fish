@@ -1,7 +1,5 @@
 set -x PATH $HOME/go/bin $PATH
-set -x PATH $HOME/.npm-global/bin $PATH
 set -g -x RANGER_LOAD_DEFAULT_RC FALSE
-set -g -x HOMEBREW_NO_AUTO_UPDATE TRUE
 function fish_greeting
 end
 function fish_title
@@ -14,10 +12,13 @@ end
 if test -f /Users/xingzheng/.autojump/share/autojump/autojump.fish; . /Users/xingzheng/.autojump/share/autojump/autojump.fish; end
 switch (uname)
 case Linux
+	set -x PATH $HOME/application/mgltools/bin $PATH
 	set -x PATH $HOME/application/miniconda3/bin $PATH
 	if status --is-login
 		startx
 	end
 case Darwin
 	set -x PATH $HOME/miniconda3/bin $PATH
+	set -g -x HOMEBREW_NO_AUTO_UPDATE TRUE
+	set -x PATH $HOME/.npm-global/bin $PATH
 end
