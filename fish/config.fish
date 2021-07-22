@@ -1,4 +1,3 @@
-set -x PATH $HOME/miniconda3/bin $PATH
 set -x PATH $HOME/go/bin $PATH
 set -x PATH $HOME/.npm-global/bin $PATH
 set -g -x RANGER_LOAD_DEFAULT_RC FALSE
@@ -13,6 +12,12 @@ function fish_title
  end
 end
 if test -f /Users/xingzheng/.autojump/share/autojump/autojump.fish; . /Users/xingzheng/.autojump/share/autojump/autojump.fish; end
-if status --is-login
-	startx
+switch (uname)
+case Linux
+	set -x PATH $HOME/application/miniconda3/bin $PATH
+	if status --is-login
+		startx
+	end
+case Darwin
+	set -x PATH $HOME/miniconda3/bin $PATH
 end
