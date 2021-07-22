@@ -130,3 +130,9 @@ https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/
 	use admin
 	db.createUser({user:"xxx",pwd:"xxxx",roles:["root"]})
 	db.createUser({user:"aw","pwd":"123456",roles:[{role:"readWrite",db:"xx"}]})
+#### v2ray
+	brew install v2ray
+	docker pull mzz2017/v2raya
+	docker run -d -p 2017:2017 -p 20170-20172:20170-20172 --restart=always --name v2raya -v /usr/local/etc/v2ray:/etc/v2ray -v /usr/local/etc/v2raya:/etc/v2raya --privileged=true mzz2017/v2raya
+	v2订阅地址:https://raw.fastgit.org/freefq/free/master/v2
+	
