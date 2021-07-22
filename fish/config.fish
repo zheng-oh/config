@@ -13,3 +13,6 @@ function fish_title
  end
 end
 if test -f /Users/xingzheng/.autojump/share/autojump/autojump.fish; . /Users/xingzheng/.autojump/share/autojump/autojump.fish; end
+if status --is-login
+	startx
+end
