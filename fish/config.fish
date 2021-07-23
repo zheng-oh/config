@@ -14,9 +14,7 @@ switch (uname)
 case Linux
 	set -x PATH $HOME/application/mgltools/bin $PATH
 	set -x PATH $HOME/application/miniconda3/bin $PATH
-	if status --is-login
-		startx
-	end
+	set -x PATH $HOME/.npm_global/bin $PATH
 case Darwin
 	set -x PATH $HOME/miniconda3/bin $PATH
 	set -g -x HOMEBREW_NO_AUTO_UPDATE TRUE
