@@ -107,13 +107,8 @@ https://wiki.archlinux.org/index.php/Installation_guide
     git config --global credential.helper store
 	git config --global user.name "zheng-oh"
 	git config --global user.email "894389673@qq.com"
-## 22. u盘自动加载到media
-#### 安装启动
-	sudo pacman -S udevil zenity exfat-utils(支持wxfat,否则只支持fat32)
-	sudo systemctl start devmon@zxing
-	sudo systemctl enable devmon@zxing
-#### 同步u盘数据 并推出
-	devmen -r
+## 22. 文件管理窗口
+	sudo pacman -S thunar
 ## 23. docker 配置
 #### 配置免sudo 使用docker
 	sudo groupadd docker
