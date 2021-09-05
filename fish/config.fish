@@ -14,6 +14,7 @@ switch (uname)
 case Linux
 	set -x PATH $HOME/application/mgltools/bin $PATH
 	set -x PATH $HOME/application/miniconda3/bin $PATH
+	set -x PATH /usr/local/gromacs/bin $PATH
 	set -x PATH $HOME/.npm_global/bin $PATH
 case Darwin
 	set -x PATH $HOME/miniconda3/bin $PATH
