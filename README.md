@@ -94,7 +94,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     sudo pacman -S adobe-source-code-pro-fonts 
 	yay -S nerd-fonts-source-code-pro
 #### emoji
-    ttf-symbola
+    yay -S ttf-symbola
     emoji查询 https://apps.timwhitlock.info/emoji/tables/unicode
 #### 中文
     yay -S adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
@@ -131,5 +131,8 @@ https://wiki.archlinux.org/index.php/Installation_guide
 	brew install v2ray
 	docker pull mzz2017/v2raya
 	docker run -d -p 2017:2017 -p 20170-20172:20170-20172 --restart=always --name v2raya -v /usr/local/etc/v2ray:/etc/v2ray -v /usr/local/etc/v2raya:/etc/v2raya --privileged=true mzz2017/v2raya
-	v2订阅地址:https://raw.fastgit.org/freefq/free/master/v2
+	v2订阅地址:
+	https://raw.fastgit.org/v2ray-links/v2ray-free/master/v2ray
+	https://iwxf.netlify.app
+	ssr://dWswNC5jbGFzaGNsb3VkLnRlY2g6NTE3NzQ6b3JpZ2luOnJjNC1tZDU6aHR0cF9zaW1wbGU6TldWVGJrdFovP3JlbWFya3M9NUxpdDVadTlMZWlMc2VXYnZlUzhwdWFWcHVlVXRlU19vU0JKUlZCTUlFUTAmcHJvdG9wYXJhbT0mb2Jmc3BhcmFtPVpHOTNibXh2WVdRdWQybHVaRzkzYzNWd1pHRjBaUzVqYjIwPQ==
 	
