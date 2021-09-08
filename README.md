@@ -56,7 +56,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     uname -m
     grub-install --target=x86_64-efi --efi-directory=/boot
 ## 12. 安装必须的软件
-    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avahi nss-mdns numlockx(可选)
+    pacman -S base-devel xorg xorg-server xorg-xinit picom feh neofetch htop chromium  wmname imwheel ranger lazygit dmenu fish wpa_supplicant dhcpcd wget git openssh avahi nss-mdns numlockx(可选)
     wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh
     bash Mini....
     chsh -s /usr/bin/fish
@@ -84,7 +84,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     pacman -S xf86-video-vmware alsa-utils (安装虚拟机的显示驱动、声卡驱动)
     配置xorg.conf 显示器分辨率 (from git clone linux_config)
 ## 17. 安装窗口管理、终端
-    git clone dwm、st
+    git clone dwm、st、autojump
     sudo make clean install
 ## 18. 安装yay
     pacman -S yay

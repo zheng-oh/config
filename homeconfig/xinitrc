@@ -37,6 +37,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 fcitx5 &
 numlockx &
+imwheel
 
 picom -CGb &   
 while feh --bg-fill --randomize ~/Picture  #让feh从你的壁纸目录中随机选择一张屏幕壁纸显示
@@ -44,7 +45,12 @@ do
 	sleep 600   #让habak每隔10分钟随机切换一张屏幕壁纸
 done &
 
-export IPADDR=wlo1 #网卡名
+export _JAVA_AWT_WM_NONREPARENTING=1 
+export AWT_TOOLKIT=MToolkit 
+wmname LG3D
+
+
+export IPADDR=enp42s0 #网卡名
 
 while xsetroot -name "IP:$(ip addr show $IPADDR| awk '/inet\s/ {print $2}')|Volume:$(amixer get Master | awk -F'[][]' 'END { print $2 }')|$(LC_ALL='C' date +'%F[%b %a] %R')"   #在dwm的菜单栏里显示一个简易的系统状态栏，包括wifi、ip、、音量、日期和时间(24小时制)。喜欢功能丰富的同学可以自己去安装配置polybar、conky、i3status、slstatus等，从中选一个。
 do

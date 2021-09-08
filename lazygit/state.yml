@@ -1,6 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/zxing/.config
+- /home/zxing/.cache/yay/texlive-most-doc
+- /home/zxing/Documents/papers
 - /home/zxing/application/dwm
 - /home/zxing/Documents/hugo_scrapyer
 - /home/zxing/Documents/doctor
