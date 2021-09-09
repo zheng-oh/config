@@ -4,6 +4,5 @@
 !picom
 !ranger
 !lazygit
-ranger/colorschemes
-ranger/plugins
 lazygit/state.yml
+__*
