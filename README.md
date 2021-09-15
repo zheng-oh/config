@@ -120,8 +120,9 @@ https://wiki.archlinux.org/index.php/Installation_guide
 	newgrp - docker
 #### redis
 	docker run --name redis -p 6379:6379 --privileged=true --restart always -v ~/Documents/data/redis:/data -d redis --appendonly yes --requirepass “你的密码”
-#### mysql
-	docker run -d --name mysql -p 3306:3306 --privileged=true --restart always -e MYSQL_ROOT_PASSWORD=123456 -e TZ=Asia/Shanghai -v /var/lib/mysql:/var/lib/mysql mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci 
+#### mariadb
+	docker run --name mariadb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -v ~/path/data:/var/lib/mysql --privileged=true --restart always -d mariadb --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+	grant all privileges on *.* to testuser@localhost identified by "123456" ;
 #### mongo
 	docker run -d -p 27017:27017 -v /var/lib/mongo:/data/db --name mongo mongo --auth
 	use admin
