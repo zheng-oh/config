@@ -83,9 +83,12 @@ https://wiki.archlinux.org/index.php/Installation_guide
     pacman -Ss xf86-video 查看对应的显示驱动程序
     pacman -S xf86-video-vmware alsa-utils (安装虚拟机的显示驱动、声卡驱动)
     配置xorg.conf 显示器分辨率 (from git clone linux_config)
-## 17. 安装窗口管理、终端
+## 17a. 安装窗口管理、终端
     git clone dwm、st、autojump
     sudo make clean install
+## 17b. 安装kde桌面
+    sudo pacman -S plasma-meta kde-applications-meta sddm
+	sudo systemctl enable sddm
 ## 18. 安装yay
     pacman -S yay
     git clone https://aur.archlinux.org/yay.git

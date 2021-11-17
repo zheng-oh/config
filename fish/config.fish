@@ -13,8 +13,10 @@ switch (uname)
 case Linux
 	set -x PATH $HOME/application/mgltools/bin $PATH
 	set -x PATH $HOME/application/miniconda3/bin $PATH
+	set -x PATH $HOME/application/blender $PATH
 	set -x PATH $HOME/application/MGLTools-1.5.6/bin $PATH
 	set -x PATH $HOME/application/node/bin $PATH
+	set -x PATH $HOME/application/proxychains/bin $PATH
 	set -x PATH /usr/local/gromacs/bin $PATH
 	set -x PATH $HOME/.npm_global/bin $PATH
 	if test -f /home/zxing/.autojump/share/autojump/autojump.fish; . /home/zxing/.autojump/share/autojump/autojump.fish; end
