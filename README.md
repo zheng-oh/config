@@ -137,4 +137,6 @@ https://wiki.archlinux.org/index.php/Installation_guide
 	docker run -d -p 2017:2017 -p 20170-20172:20170-20172 --restart=always --name v2raya -v /usr/local/etc/v2ray:/etc/v2ray -v /usr/local/etc/v2raya:/etc/v2raya --privileged=true mzz2017/v2raya
 	v2订阅地址:
 	https://sub.foxicloud.com/api/v1/client/subscribe?token=dc8b11058b25d1222d44034f1e6815704120
+	sync:
+	undo cake robot angle account license urban path penalty anxiety wrestle hospital display crunch rather real demand topic pyramid glass cage festival play logic
 	
