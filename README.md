@@ -136,7 +136,5 @@ https://wiki.archlinux.org/index.php/Installation_guide
 	docker pull mzz2017/v2raya
 	docker run -d -p 2017:2017 -p 20170-20172:20170-20172 --restart=always --name v2raya -v /usr/local/etc/v2ray:/etc/v2ray -v /usr/local/etc/v2raya:/etc/v2raya --privileged=true mzz2017/v2raya
 	v2订阅地址:
-	https://raw.fastgit.org/freefq/free/master/v2
-	https://iwxf.netlify.app
-	ssr://dWswNC5jbGFzaGNsb3VkLnRlY2g6NTE3NzQ6b3JpZ2luOnJjNC1tZDU6aHR0cF9zaW1wbGU6TldWVGJrdFovP3JlbWFya3M9NUxpdDVadTlMZWlMc2VXYnZlUzhwdWFWcHVlVXRlU19vU0JKUlZCTUlFUTAmcHJvdG9wYXJhbT0mb2Jmc3BhcmFtPVpHOTNibXh2WVdRdWQybHVaRzkzYzNWd1pHRjBaUzVqYjIwPQ==
+	https://sub.foxicloud.com/api/v1/client/subscribe?token=dc8b11058b25d1222d44034f1e681570
 	
