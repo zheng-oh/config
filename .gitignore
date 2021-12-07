@@ -3,6 +3,7 @@
 !homeconfig
 !picom
 !ranger
+ranger/plugins
 !lazygit
 lazygit/state.yml
 __*

@@ -112,9 +112,18 @@ https://wiki.archlinux.org/index.php/Installation_guide
 	git config --global user.email "894389673@qq.com"
 ## 22. 文件管理窗口
 	sudo pacman -S thunar
-## 23. vscode wps
+## 23. vscode wps ranger配置
 	yay -S visual-studio-code-bin wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts
-## 24. docker 配置
+	git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2
+## 24. latex
+	sudo pacman -S texlive-most texlive-lang
+#### vscode format
+	sudo cpan Log::Log4perl
+	sudo cpan Log::Dispatch
+	sudo cpan YAML::Tiny
+	sudo cpan File::HomeDir
+	sudo cpan Unicode::GCString
+## 25. docker 配置
 #### 配置免sudo 使用docker
 	sudo groupadd docker
 #### 将用户加入该 group 内。然后退出并重新登录就生效啦。
