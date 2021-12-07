@@ -10,3 +10,5 @@ recentrepos:
 - /home/zxing/Documents/hugo_scrapyer/themes/github-style
 - /home/zxing/Documents/vue/scrapyer
 startuppopupversion: 5
+customcommandshistory: []
+hidecommandlog: false
