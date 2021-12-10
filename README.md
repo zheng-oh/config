@@ -89,6 +89,8 @@ https://wiki.archlinux.org/index.php/Installation_guide
 ## 17b. 安装kde桌面
     sudo pacman -S plasma-meta kde-applications-meta sddm
 	sudo systemctl enable sddm
+#### Okular 中文pdf显示
+	sudo pacman -S poppler-data
 ## 18. 安装yay
     pacman -S yay
     git clone https://aur.archlinux.org/yay.git
@@ -97,10 +99,10 @@ https://wiki.archlinux.org/index.php/Installation_guide
     sudo pacman -S adobe-source-code-pro-fonts 
 	yay -S nerd-fonts-source-code-pro
 #### emoji
-    yay -S ttf-symbola
+	yay -S ttf-linux-libertine ttf-inconsolata ttf-joypixels ttf-twemoji-color noto-fonts-emoji ttf-liberation ttf-droid
     emoji查询 https://apps.timwhitlock.info/emoji/tables/unicode
 #### 中文
-    yay -S adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+	yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-han-mono-cn-fonts adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts ttf-ms-fonts
 ## 20. 中文输入法
     sudo pacman -Rsc fcitx
     sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk kcm-fcitx5 fcitx5-material-color
@@ -147,7 +149,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
 	docker pull mzz2017/v2raya
 	docker run -d -p 2017:2017 -p 20170-20172:20170-20172 --restart=always --name v2raya -v /usr/local/etc/v2ray:/etc/v2ray -v /usr/local/etc/v2raya:/etc/v2raya --privileged=true mzz2017/v2raya
 	v2订阅地址:
-	https://sub.foxicloud.com/api/v1/client/subscribe?token=dc8b11058b25d1222d44034f1e6815704120
+	https://subscribe.galaxy-cloud.link/api/v1/client/subscribe?token=5388dd30a6a38d85aa435697f604d69a4120
 	sync:
 	undo cake robot angle account license urban path penalty anxiety wrestle hospital display crunch rather real demand topic pyramid glass cage festival play logic
 	
