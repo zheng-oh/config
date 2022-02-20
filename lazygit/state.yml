@@ -1,12 +1,15 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/zxing/.config
+- /home/zxing/projects/xulab
+- /home/zxing/Documents/papers
+- /home/zxing/Documents/doctor
+- /home/zxing/Documents/ta
+- /home/zxing/Documents/patent
 - /home/zxing/.config/ranger/plugins/ranger_devicons
 - /home/zxing/.cache/yay/texlive-most-doc
-- /home/zxing/Documents/papers
 - /home/zxing/application/dwm
 - /home/zxing/Documents/hugo_scrapyer
-- /home/zxing/Documents/doctor
 - /home/zxing/Documents/hugo_scrapyer/themes/github-style
 - /home/zxing/Documents/vue/scrapyer
 startuppopupversion: 5
