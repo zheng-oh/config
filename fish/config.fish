@@ -26,3 +26,17 @@ case Darwin
 	set -x PATH $HOME/.npm-global/bin $PATH
 	if test -f /Users/xingzheng/.autojump/share/autojump/autojump.fish; . /Users/xingzheng/.autojump/share/autojump/autojump.fish; end
 end
+# 开启代理
+function proxy_on
+  set -gx http_proxy "http://127.0.0.1:7890"
+  set -gx https_proxy $http_proxy
+  echo "代理已开启"
+end
+
+# 关闭代理
+function proxy_off
+  set -e http_proxy
+  set -e https_proxy
+  echo "代理已关闭"
+end
+

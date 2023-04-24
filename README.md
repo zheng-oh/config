@@ -111,7 +111,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
     https://{username}:{password}@github.com
     git config --global credential.helper store
 	git config --global user.name "zheng-oh"
-	git config --global user.email "894389673@qq.com"
+	git config --global user.email "zxing_oh@163.com"
 ## 22. 文件管理窗口
 	sudo pacman -S thunar
 ## 23. vscode wps ranger配置
