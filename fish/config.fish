@@ -6,13 +6,13 @@ function fish_title
  if test $TERM_PROGRAM
   echo $TERM_PROGRAM
  else
-  echo $TERM|egrep -o "^\w*"
+  echo $TERM|grep -E -o "^\w*"
  end
 end
 switch (uname)
 case Linux
 	set -x PATH $HOME/application/mgltools/bin $PATH
-	set -x PATH $HOME/application/miniconda3/bin $PATH
+	set -x PATH $HOME/miniconda/bin $PATH
 	set -x PATH $HOME/application/blender $PATH
 	set -x PATH $HOME/application/MGLTools-1.5.6/bin $PATH
 	set -x PATH $HOME/application/node/bin $PATH
@@ -28,7 +28,7 @@ case Darwin
 end
 # 开启代理
 function proxy_on
-  set -gx http_proxy "http://127.0.0.1:7890"
+  set -gx http_proxy "http://10.10.10.103:7890"
   set -gx https_proxy $http_proxy
   echo "代理已开启"
 end
