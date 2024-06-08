@@ -6,8 +6,6 @@ call vundle#begin()
 "set shell=/bin/bash
 " 自定义代码补全
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips'
-"Bundle 'davidhalter/jedi-vim'
 " superTab
 Plugin 'ervandew/supertab'
 call vundle#end()  
